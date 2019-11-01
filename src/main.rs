@@ -1,7 +1,3 @@
-extern crate dialoguer;
-extern crate reqwest;
-extern crate url;
-
 use dialoguer::{theme::CustomPromptCharacterTheme, Input, PasswordInput, Select};
 use serde::{Deserialize, Serialize};
 use std::env;
@@ -169,5 +165,7 @@ fn main() {
         login(&mut c);
     }
     write_config(&c).expect("Could not write config");
-    post(&c);
+    loop {
+        post(&c);
+    }
 }
